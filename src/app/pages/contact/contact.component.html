@@ -1,0 +1,249 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="page-header-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-handshake-business-deal-4521/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="page-header-overlay"></div>
+  </div>
+  <div class="page-header-content" @fadeInUp>
+    <span class="page-label">Contact Us</span>
+    <h1 class="page-title">Let's Build Something Great Together</h1>
+    <p class="page-subtitle">We're here to answer your questions and discuss your project</p>
+  </div>
+</section>
+
+<!-- Contact Information -->
+<section class="contact-info-section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card" @fadeInUp>
+        <div class="info-icon">📍</div>
+        <h3 class="info-title">Visit Us</h3>
+        <p class="info-text">123 Architecture Lane<br>Midland, TX 79701<br>United States</p>
+      </div>
+      <div class="info-card" @fadeInUp>
+        <div class="info-icon">📧</div>
+        <h3 class="info-title">Email Us</h3>
+        <!-- <p class="info-text">info@cornerstonedesign.com<br>careers&#64;cornerstonedesign.com<br>support&#64;cornerstonedesign.com</p> -->
+      </div>
+      <div class="info-card" @fadeInUp>
+        <div class="info-icon">📱</div>
+        <h3 class="info-title">Call Us</h3>
+        <p class="info-text">Main: +1 (555) 123-4567<br>Fax: +1 (555) 123-4568<br>Emergency: +1 (555) 123-4569</p>
+      </div>
+      <div class="info-card" @fadeInUp>
+        <div class="info-icon">🕐</div>
+        <h3 class="info-title">Business Hours</h3>
+        <p class="info-text">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-intro" @fadeInUp>
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Start Your Project Today</h2>
+        <div class="section-divider" style="margin-left: 0;"></div>
+        <p class="form-description">Fill out the form below and our team will get back to you within 24 hours. We're excited to hear about your project and discuss how we can help bring your vision to life.</p>
+        
+        <div class="why-contact">
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <span>Free initial consultation</span>
+          </div>
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <span>Quick response time</span>
+          </div>
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <span>No obligation quote</span>
+          </div>
+          <div class="why-item">
+            <span class="why-check">✓</span>
+            <span>Expert consultation</span>
+          </div>
+        </div>
+
+        <div class="social-connect">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#" class="social-icon">in</a>
+            <a href="#" class="social-icon">ig</a>
+            <a href="#" class="social-icon">fb</a>
+            <a href="#" class="social-icon">tw</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="submitForm()" @fadeInUp>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              [(ngModel)]="formData.name"
+              class="form-control" 
+              placeholder="John Smith"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input 
+              type="email" 
+              id="email"
+              name="email"
+              [(ngModel)]="formData.email"
+              class="form-control" 
+              placeholder="john@example.com"
+              required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input 
+              type="tel" 
+              id="phone"
+              name="phone"
+              [(ngModel)]="formData.phone"
+              class="form-control" 
+              placeholder="+1 (555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input 
+              type="text" 
+              id="company"
+              name="company"
+              [(ngModel)]="formData.company"
+              class="form-control" 
+              placeholder="Your Company">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectType">Project Type *</label>
+            <select 
+              id="projectType"
+              name="projectType"
+              [(ngModel)]="formData.projectType"
+              class="form-control"
+              required>
+              <option value="">Select project type</option>
+              <option value="commercial">Commercial Architecture</option>
+              <option value="residential">Residential Design</option>
+              <option value="industrial">Industrial Design</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="mixed-use">Mixed-Use Development</option>
+              <option value="renovation">Renovation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select 
+              id="budget"
+              name="budget"
+              [(ngModel)]="formData.budget"
+              class="form-control">
+              <option value="">Select budget range</option>
+              <option value="under-500k">Under $500K</option>
+              <option value="500k-1m">$500K - $1M</option>
+              <option value="1m-5m">$1M - $5M</option>
+              <option value="5m-10m">$5M - $10M</option>
+              <option value="over-10m">Over $10M</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Project Details *</label>
+          <textarea 
+            id="message"
+            name="message"
+            [(ngModel)]="formData.message"
+            class="form-control" 
+            rows="6" 
+            placeholder="Tell us about your project, timeline, and any specific requirements..."
+            required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large">
+          Send Message
+          <span class="btn-icon">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215745.07603110018!2d-102.21920743831886!3d31.997669149999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fec619d3a4e5d5%3A0x9c8c21c0a35b7a4c!2sMidland%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+      width="100%" 
+      height="500" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+    <div class="map-overlay">
+      <div class="map-info" @fadeInUp>
+        <h3>Visit Our Office</h3>
+        <p>Schedule a meeting at our Midland location</p>
+        <button class="btn btn-secondary">
+          Get Directions
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">How long does a typical project take?</h3>
+        <p class="faq-answer">Project timelines vary based on scope and complexity. Residential projects typically range from 8-16 months, while commercial projects may take 18-36 months from design to completion.</p>
+      </div>
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">What is your design process?</h3>
+        <p class="faq-answer">Our process includes initial consultation, concept development, design refinement, documentation, and construction support. We work collaboratively with clients throughout each phase.</p>
+      </div>
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">Do you offer sustainable design options?</h3>
+        <p class="faq-answer">Absolutely! We specialize in sustainable architecture and can help you achieve LEED certification, energy efficiency, and environmentally responsible design goals.</p>
+      </div>
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">What are your fees?</h3>
+        <p class="faq-answer">Fees vary based on project type, size, and complexity. We offer competitive rates and provide detailed proposals after the initial consultation. Contact us for a custom quote.</p>
+      </div>
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">Do you work outside of Texas?</h3>
+        <p class="faq-answer">Yes! While based in Texas, we take on projects nationwide. We're licensed and experienced in working across multiple states.</p>
+      </div>
+      <div class="faq-item" @fadeInUp>
+        <h3 class="faq-question">Can you help with renovations?</h3>
+        <p class="faq-answer">Yes, we offer comprehensive renovation and remodeling services for both residential and commercial properties, from minor updates to complete transformations.</p>
+      </div>
+    </div>
+  </div>
+</section>

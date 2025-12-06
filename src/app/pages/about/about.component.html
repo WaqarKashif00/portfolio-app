@@ -1,0 +1,136 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="page-header-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-architectural-blueprint-3892/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="page-header-overlay"></div>
+  </div>
+  <div class="page-header-content" @fadeInUp>
+    <span class="page-label">About Us</span>
+    <h1 class="page-title">Building Dreams Since 2009</h1>
+    <p class="page-subtitle">Crafting architectural excellence with passion and precision</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="our-story">
+  <div class="container">
+    <div class="story-content">
+      <div class="story-text" @fadeInUp>
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Architectural Excellence Through Innovation</h2>
+        <div class="section-divider"></div>
+        <p class="lead">Founded in 2009, Cornerstone Design Group has grown from a small team of passionate architects into one of the region's most respected architectural firms.</p>
+        <p>Our journey began with a simple vision: to create spaces that inspire, function beautifully, and stand the test of time. Over the years, we've had the privilege of working on hundreds of projects, each one unique and each one a testament to our commitment to excellence.</p>
+        <p>We believe that great architecture is more than just buildings—it's about creating environments that enhance people's lives, strengthen communities, and contribute positively to the world around us.</p>
+        <p>Today, our team of talented architects, designers, and project managers continues to push the boundaries of what's possible, combining timeless design principles with cutting-edge technology to deliver exceptional results for our clients.</p>
+      </div>
+      <div class="story-images" @fadeInUp>
+        <div class="story-image-main">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=700&fit=crop" alt="Our Team">
+        </div>
+        <div class="story-image-small">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Office">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="our-values">
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <span class="section-label">Our Values</span>
+      <h2 class="section-title">What Drives Us Forward</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let value of values" @fadeInUp>
+        <div class="value-icon">{{ value.icon }}</div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-description">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <span class="section-label">Our Journey</span>
+      <h2 class="section-title">Milestones & Achievements</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" 
+           [class.timeline-left]="i % 2 === 0" 
+           [class.timeline-right]="i % 2 !== 0"
+           @fadeInUp>
+        <div class="timeline-content">
+          <div class="timeline-year">{{ milestone.year }}</div>
+          <h3 class="timeline-event">{{ milestone.event }}</h3>
+          <p class="timeline-description">{{ milestone.description }}</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <span class="section-label">Our Team</span>
+      <h2 class="section-title">Meet The Experts</h2>
+      <div class="section-divider"></div>
+      <p class="section-description">Our diverse team of architects and designers brings together decades of combined experience</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-member" *ngFor="let member of teamMembers" @fadeInUp>
+        <div class="team-image">
+          <img [src]="member.image" [alt]="member.name">
+          <div class="team-overlay">
+            <p class="team-bio">{{ member.bio }}</p>
+          </div>
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">{{ member.name }}</h3>
+          <p class="team-position">{{ member.position }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="about-video">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-team-meeting-in-office-3521/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <div class="container">
+        <h2 class="video-title" @fadeInUp>We're More Than Just Architects</h2>
+        <p class="video-text" @fadeInUp>We're partners in bringing your vision to life</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content" @fadeInUp>
+      <h2 class="cta-title">Ready to Start Your Project?</h2>
+      <p class="cta-text">Let's work together to create something extraordinary</p>
+      <button class="btn btn-primary" routerLink="/contact">
+        Get in Touch
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+  </div>
+</section>

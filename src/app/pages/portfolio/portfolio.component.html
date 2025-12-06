@@ -1,0 +1,186 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="page-header-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-city-architecture-3692/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="page-header-overlay"></div>
+  </div>
+  <div class="page-header-content" @fadeInUp>
+    <span class="page-label">Our Portfolio</span>
+    <h1 class="page-title">Exceptional Projects, Exceptional Results</h1>
+    <p class="page-subtitle">Explore our collection of architectural achievements</p>
+  </div>
+</section>
+
+<!-- Portfolio Filter -->
+<section class="portfolio-filter">
+  <div class="container">
+    <div class="filter-buttons" @fadeInUp>
+      <button 
+        *ngFor="let category of categories"
+        class="filter-btn"
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid-section">
+  <div class="container">
+    <div class="portfolio-grid">
+      <div class="portfolio-item" 
+           *ngFor="let project of filteredProjects" 
+           (click)="openProject(project)"
+           @fadeInUp>
+        <div class="portfolio-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-category">{{ project.category }}</span>
+              <h3 class="portfolio-title">{{ project.title }}</h3>
+              <p class="portfolio-location">📍 {{ project.location }}</p>
+              <p class="portfolio-year">📅 {{ project.year }}</p>
+            </div>
+            <div class="portfolio-icon">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="stats-banner">
+  <div class="container">
+    <div class="stats-content">
+      <div class="stat-box" @fadeInUp>
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Completed Projects</div>
+      </div>
+      <div class="stat-box" @fadeInUp>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-box" @fadeInUp>
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat-box" @fadeInUp>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="section-header" @fadeInUp>
+      <span class="section-label">Client Testimonials</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" @fadeInUp>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Cornerstone transformed our vision into reality with exceptional attention to detail and professionalism. The result exceeded all expectations."</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Author">
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">James Wilson</h4>
+            <p class="author-title">CEO, TechCorp</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" @fadeInUp>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Working with their team was a pleasure from start to finish. They delivered on time, on budget, and with outstanding quality."</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" alt="Author">
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">Sarah Mitchell</h4>
+            <p class="author-title">Property Developer</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card" @fadeInUp>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Their innovative approach and commitment to sustainability made them the perfect partner for our project. Highly recommended!"</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Author">
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">Michael Chen</h4>
+            <p class="author-title">Retail Chain Owner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content" @fadeInUp>
+      <h2 class="cta-title">Let's Create Something Amazing Together</h2>
+      <p class="cta-text">Ready to start your architectural journey?</p>
+      <button class="btn btn-primary" routerLink="/contact">
+        Start Your Project
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Project Modal -->
+<div class="modal" *ngIf="activeProject" (click)="closeProject()">
+  <div class="modal-content" (click)="$event.stopPropagation()" @scaleIn>
+    <button class="modal-close" (click)="closeProject()">×</button>
+    
+    <div class="modal-media">
+      <video *ngIf="activeProject.videoUrl" controls autoplay class="modal-video">
+        <source [src]="activeProject.videoUrl" type="video/mp4">
+      </video>
+      <img *ngIf="!activeProject.videoUrl" [src]="activeProject.image" [alt]="activeProject.title" class="modal-image">
+    </div>
+    
+    <div class="modal-details">
+      <div class="modal-header">
+        <span class="modal-category">{{ activeProject.category }}</span>
+        <h2 class="modal-title">{{ activeProject.title }}</h2>
+        <div class="modal-meta">
+          <span class="meta-item">📍 {{ activeProject.location }}</span>
+          <span class="meta-item">📅 {{ activeProject.year }}</span>
+        </div>
+      </div>
+      
+      <p class="modal-description">{{ activeProject.description }}</p>
+      
+      <div class="modal-specs">
+        <div class="spec-item" *ngIf="activeProject.details.size">
+          <span class="spec-label">Size</span>
+          <span class="spec-value">{{ activeProject.details.size }}</span>
+        </div>
+        <div class="spec-item" *ngIf="activeProject.details.budget">
+          <span class="spec-label">Budget</span>
+          <span class="spec-value">{{ activeProject.details.budget }}</span>
+        </div>
+        <div class="spec-item" *ngIf="activeProject.details.duration">
+          <span class="spec-label">Duration</span>
+          <span class="spec-value">{{ activeProject.details.duration }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
