@@ -996,10 +996,41 @@
     font-size: 48px;
   }
   
+  .hero-subtitle {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px 35px;
+    font-size: 13px;
+  }
+  
+  .slide-content {
+    left: 20px;
+    right: 20px;
+    bottom: 80px;
+  }
+  
+  .slide-title {
+    font-size: 32px;
+  }
+  
+  .slide-subtitle {
+    font-size: 16px;
+  }
+  
   .slide-control {
-    width: 45px;
-    height: 45px;
-    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
   }
   
   .slide-control.prev {
@@ -1010,21 +1041,167 @@
     right: 15px;
   }
   
+  .slide-indicators {
+    bottom: 25px;
+    gap: 10px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .indicator.active {
+    width: 30px;
+  }
+  
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 10px;
+  }
+  
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .stat-item {
+    padding: 30px 15px;
+  }
+  
+  .stat-icon {
+    font-size: 36px;
+  }
+  
+  .stat-number {
+    font-size: 40px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
   }
   
   .welcome-content {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .welcome-text .lead {
+    font-size: 20px;
+  }
+  
+  .welcome-text p {
+    font-size: 15px;
+  }
+  
+  .welcome-image {
+    order: -1;
+  }
+  
+  .welcome-image img {
+    height: 400px;
   }
   
   .services-grid,
   .projects-grid,
   .image-gallery {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .service-card {
+    padding: 35px 25px;
+  }
+  
+  .service-icon {
+    font-size: 56px;
+  }
+  
+  .service-title {
+    font-size: 20px;
+  }
+  
+  .service-description {
+    font-size: 14px;
+  }
+  
+  .project-image {
+    height: 350px;
+  }
+  
+  .project-title {
+    font-size: 24px;
+  }
+  
+  .project-description {
+    font-size: 14px;
   }
   
   .gallery-item {
-    height: 280px;
+    height: 300px;
+  }
+  
+  .video-showcase {
+    height: 400px;
+  }
+  
+  .video-showcase-title {
+    font-size: 36px;
+  }
+  
+  .video-showcase-text {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .section-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  
+  .slide-title {
+    font-size: 24px;
+  }
+  
+  .slide-subtitle {
+    font-size: 14px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+  
+  .welcome-text .lead {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .video-showcase-title {
+    font-size: 28px;
+  }
+  
+  .project-title {
+    font-size: 20px;
   }
 }

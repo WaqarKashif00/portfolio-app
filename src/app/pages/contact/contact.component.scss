@@ -1,3 +1,72 @@
+/* Page Header */
+.page-header {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.85), rgba(45, 45, 45, 0.75));
+}
+
+.page-header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-header-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.7));
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+}
+
+.page-label {
+  display: inline-block;
+  color: #c9a860;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff, #c9a860);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+}
+
 /* Contact Info Section */
 .contact-info-section {
   padding: 80px 0;
@@ -304,8 +373,37 @@ textarea.form-control {
 }
 
 @media (max-width: 968px) {
+  .page-title {
+    font-size: 48px;
+  }
+  
+  .page-subtitle {
+    font-size: 16px;
+  }
+  
+  .page-header {
+    height: 50vh;
+  }
+  
   .info-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .info-card {
+    padding: 30px 20px;
+  }
+  
+  .info-icon {
+    font-size: 48px;
+  }
+  
+  .info-title {
+    font-size: 18px;
+  }
+  
+  .info-text {
+    font-size: 14px;
   }
   
   .form-layout {
@@ -317,8 +415,27 @@ textarea.form-control {
     position: static;
   }
   
+  .form-description {
+    font-size: 15px;
+  }
+  
+  .contact-form {
+    padding: 40px 30px;
+  }
+  
   .form-row {
     grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .form-control {
+    padding: 13px;
+    font-size: 14px;
+  }
+  
+  .btn-large {
+    padding: 16px 35px;
+    font-size: 14px;
   }
   
   .map-overlay {
@@ -326,13 +443,189 @@ textarea.form-control {
     justify-content: center;
   }
   
+  .map-info {
+    max-width: 100%;
+    padding: 30px 25px;
+  }
+  
+  .map-info h3 {
+    font-size: 24px;
+  }
+  
   .faq-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    padding: 30px 25px;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+  }
+  
+  .faq-answer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 38px;
+  }
+  
+  .page-subtitle {
+    font-size: 14px;
+  }
+  
+  .page-header {
+    height: 45vh;
+  }
+  
+  .info-card {
+    padding: 25px 20px;
+  }
+  
+  .info-icon {
+    font-size: 42px;
+  }
+  
+  .info-title {
+    font-size: 17px;
+  }
+  
+  .info-text {
+    font-size: 13px;
+  }
+  
+  .contact-form {
+    padding: 35px 25px;
+  }
+  
+  .form-group label {
+    font-size: 13px;
+  }
+  
+  .form-control {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .why-contact {
+    margin-bottom: 30px;
+  }
+  
+  .why-item {
+    font-size: 14px;
+  }
+  
+  .social-connect h4 {
+    font-size: 16px;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .map-info {
+    padding: 25px 20px;
+  }
+  
+  .map-info h3 {
+    font-size: 22px;
+  }
+  
+  .map-info p {
+    font-size: 14px;
+  }
+  
+  .faq-question {
+    font-size: 17px;
+  }
+  
+  .faq-answer {
+    font-size: 13px;
+    padding-left: 0;
+  }
+  
+  .faq-question::before {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 600px) {
   .info-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 32px;
+  }
+  
+  .page-subtitle {
+    font-size: 13px;
+  }
+  
+  .info-card {
+    padding: 25px;
+  }
+  
+  .contact-form {
+    padding: 30px 20px;
+  }
+  
+  .btn-large {
+    padding: 14px 30px;
+    font-size: 13px;
+  }
+  
+  .form-control {
+    padding: 11px;
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+  }
+  
+  .map-section {
+    height: 400px;
+  }
+  
+  .map-info {
+    padding: 20px;
+  }
+  
+  .map-info h3 {
+    font-size: 20px;
+  }
+  
+  .faq-item {
+    padding: 25px 20px;
+  }
+  
+  .faq-question {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .info-icon {
+    font-size: 36px;
+  }
+  
+  .info-title {
+    font-size: 16px;
+  }
+  
+  .map-info h3 {
+    font-size: 18px;
   }
 }
