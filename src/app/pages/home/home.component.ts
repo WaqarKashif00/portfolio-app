@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
     {
       title: 'Industrial Complex',
       category: 'Industrial',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112d38e149?w=800&h=600&fit=crop&q=80',
+      image: 'https://cdn.pixabay.com/photo/2022/03/04/02/26/factory-7046354_960_720.jpg',
       description: 'State-of-the-art manufacturing facility'
     },
     {
