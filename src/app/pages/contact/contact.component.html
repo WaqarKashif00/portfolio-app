@@ -1,9 +1,7 @@
 <!-- Page Header -->
 <section class="page-header">
-  <div class="page-header-video">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-handshake-business-deal-4521/1080p.mp4" type="video/mp4">
-    </video>
+  <div class="page-header-image">
+    <img src="assets/images/portfolio/journey/5-completion-2.jpg" alt="Commercial Project">
     <div class="page-header-overlay"></div>
   </div>
   <div class="page-header-content" @fadeInUp>
@@ -49,8 +47,9 @@
         <span class="section-label">Get In Touch</span>
         <h2 class="section-title">Start Your Project Today</h2>
         <div class="section-divider" style="margin-left: 0;"></div>
-        <p class="form-description">Fill out the form below and our team will get back to you within 24 hours. We're excited to hear about your project and discuss how we can help bring your vision to life.</p>
-        
+        <p class="form-description">Fill out the form below and our team will get back to you within 24 hours. We're
+          excited to hear about your project and discuss how we can help bring your vision to life.</p>
+
         <div class="why-contact">
           <div class="why-item">
             <span class="why-check">✓</span>
@@ -85,47 +84,25 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name"
-              [(ngModel)]="formData.name"
-              class="form-control" 
-              placeholder="John Smith"
-              required>
+            <input type="text" id="name" name="name" [(ngModel)]="formData.name" class="form-control"
+              placeholder="John Smith" required>
           </div>
           <div class="form-group">
             <label for="email">Email Address *</label>
-            <input 
-              type="email" 
-              id="email"
-              name="email"
-              [(ngModel)]="formData.email"
-              class="form-control" 
-              placeholder="john@example.com"
-              required>
+            <input type="email" id="email" name="email" [(ngModel)]="formData.email" class="form-control"
+              placeholder="john@example.com" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input 
-              type="tel" 
-              id="phone"
-              name="phone"
-              [(ngModel)]="formData.phone"
-              class="form-control" 
+            <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" class="form-control"
               placeholder="+1 (555) 123-4567">
           </div>
           <div class="form-group">
             <label for="company">Company Name</label>
-            <input 
-              type="text" 
-              id="company"
-              name="company"
-              [(ngModel)]="formData.company"
-              class="form-control" 
+            <input type="text" id="company" name="company" [(ngModel)]="formData.company" class="form-control"
               placeholder="Your Company">
           </div>
         </div>
@@ -133,16 +110,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="projectType">Project Type *</label>
-            <select 
-              id="projectType"
-              name="projectType"
-              [(ngModel)]="formData.projectType"
-              class="form-control"
+            <select id="projectType" name="projectType" [(ngModel)]="formData.projectType" class="form-control"
               required>
               <option value="">Select project type</option>
               <option value="commercial">Commercial Architecture</option>
               <option value="residential">Residential Design</option>
-              <option value="industrial">Industrial Design</option>
               <option value="hospitality">Hospitality</option>
               <option value="mixed-use">Mixed-Use Development</option>
               <option value="renovation">Renovation</option>
@@ -151,11 +123,7 @@
           </div>
           <div class="form-group">
             <label for="budget">Budget Range</label>
-            <select 
-              id="budget"
-              name="budget"
-              [(ngModel)]="formData.budget"
-              class="form-control">
+            <select id="budget" name="budget" [(ngModel)]="formData.budget" class="form-control">
               <option value="">Select budget range</option>
               <option value="under-500k">Under $500K</option>
               <option value="500k-1m">$500K - $1M</option>
@@ -168,14 +136,8 @@
 
         <div class="form-group">
           <label for="message">Project Details *</label>
-          <textarea 
-            id="message"
-            name="message"
-            [(ngModel)]="formData.message"
-            class="form-control" 
-            rows="6" 
-            placeholder="Tell us about your project, timeline, and any specific requirements..."
-            required></textarea>
+          <textarea id="message" name="message" [(ngModel)]="formData.message" class="form-control" rows="6"
+            placeholder="Tell us about your project, timeline, and any specific requirements..." required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary btn-large">
@@ -190,13 +152,9 @@
 <!-- Map Section -->
 <section class="map-section">
   <div class="map-container">
-    <iframe 
+    <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215745.07603110018!2d-102.21920743831886!3d31.997669149999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fec619d3a4e5d5%3A0x9c8c21c0a35b7a4c!2sMidland%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-      width="100%" 
-      height="500" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy">
+      width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy">
     </iframe>
     <div class="map-overlay">
       <div class="map-info" @fadeInUp>
@@ -222,27 +180,33 @@
     <div class="faq-grid">
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">How long does a typical project take?</h3>
-        <p class="faq-answer">Project timelines vary based on scope and complexity. Residential projects typically range from 8-16 months, while commercial projects may take 18-36 months from design to completion.</p>
+        <p class="faq-answer">Project timelines vary based on scope and complexity. Residential projects typically range
+          from 8-16 months, while commercial projects may take 18-36 months from design to completion.</p>
       </div>
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">What is your design process?</h3>
-        <p class="faq-answer">Our process includes initial consultation, concept development, design refinement, documentation, and construction support. We work collaboratively with clients throughout each phase.</p>
+        <p class="faq-answer">Our process includes initial consultation, concept development, design refinement,
+          documentation, and construction support. We work collaboratively with clients throughout each phase.</p>
       </div>
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">Do you offer sustainable design options?</h3>
-        <p class="faq-answer">Absolutely! We specialize in sustainable architecture and can help you achieve LEED certification, energy efficiency, and environmentally responsible design goals.</p>
+        <p class="faq-answer">Absolutely! We specialize in sustainable architecture and can help you achieve LEED
+          certification, energy efficiency, and environmentally responsible design goals.</p>
       </div>
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">What are your fees?</h3>
-        <p class="faq-answer">Fees vary based on project type, size, and complexity. We offer competitive rates and provide detailed proposals after the initial consultation. Contact us for a custom quote.</p>
+        <p class="faq-answer">Fees vary based on project type, size, and complexity. We offer competitive rates and
+          provide detailed proposals after the initial consultation. Contact us for a custom quote.</p>
       </div>
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">Do you work outside of Texas?</h3>
-        <p class="faq-answer">Yes! While based in Texas, we take on projects nationwide. We're licensed and experienced in working across multiple states.</p>
+        <p class="faq-answer">Yes! While based in Texas, we take on projects nationwide. We're licensed and experienced
+          in working across multiple states.</p>
       </div>
       <div class="faq-item" @fadeInUp>
         <h3 class="faq-question">Can you help with renovations?</h3>
-        <p class="faq-answer">Yes, we offer comprehensive renovation and remodeling services for both residential and commercial properties, from minor updates to complete transformations.</p>
+        <p class="faq-answer">Yes, we offer comprehensive renovation and remodeling services for both residential and
+          commercial properties, from minor updates to complete transformations.</p>
       </div>
     </div>
   </div>

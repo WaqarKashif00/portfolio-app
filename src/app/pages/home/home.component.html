@@ -1,27 +1,23 @@
 <!-- Hero Section with Slideshow -->
 <section class="hero">
   <div class="hero-slideshow">
-    <div class="hero-slide" 
-         *ngFor="let slide of heroSlides; let i = index"
-         [class.active]="i === currentSlide"
-         [style.background-image]="'url(' + slide.image + ')'">
+    <div class="hero-slide" *ngFor="let slide of heroSlides; let i = index" [class.active]="i === currentSlide"
+      [style.background-image]="'url(' + slide.image + ')'">
       <div class="hero-overlay"></div>
     </div>
   </div>
-  
+
   <!-- Slide Controls -->
   <!-- <button class="slide-control prev" (click)="prevSlide()">‹</button>
   <button class="slide-control next" (click)="nextSlide()">›</button> -->
-  
+
   <!-- Slide Indicators -->
   <div class="slide-indicators">
-    <button *ngFor="let slide of heroSlides; let i = index" 
-            class="indicator"
-            [class.active]="i === currentSlide"
-            (click)="goToSlide(i)">
+    <button *ngFor="let slide of heroSlides; let i = index" class="indicator" [class.active]="i === currentSlide"
+      (click)="goToSlide(i)">
     </button>
   </div>
-  
+
   <div class="hero-content" @fadeInUp>
     <h1 class="hero-title">
       <span class="hero-title-line">Architectural</span>
@@ -66,7 +62,8 @@
         <h2 class="section-title">Transforming Visions Into Reality</h2>
         <div class="section-divider"></div>
         <p class="lead">We are passionate about creating architectural masterpieces that stand the test of time.</p>
-        <p>Our team of experienced architects and designers work collaboratively with clients to bring their dreams to life. From initial concept to final execution, we ensure every detail reflects excellence and innovation.</p>
+        <p>Our team of experienced architects and designers work collaboratively with clients to bring their dreams to
+          life. From initial concept to final execution, we ensure every detail reflects excellence and innovation.</p>
         <div class="welcome-features">
           <div class="feature-item">
             <span class="feature-icon">✓</span>
@@ -113,9 +110,9 @@
         <p class="service-description">Designing homes that reflect your personal style and lifestyle.</p>
       </div>
       <div class="service-card" @fadeInUp>
-        <div class="service-icon">🏭</div>
-        <h3 class="service-title">Industrial Design</h3>
-        <p class="service-description">Delivering efficient workspace solutions for industrial needs.</p>
+        <div class="service-icon">📐</div>
+        <h3 class="service-title">Custom Revit Content</h3>
+        <p class="service-description">Crafted Revit families designed for simplicity and technical precision.</p>
       </div>
     </div>
     <div class="text-center" style="margin-top: 40px;">
@@ -166,30 +163,15 @@
       <div class="section-divider"></div>
     </div>
     <div class="image-gallery">
-      <div class="gallery-item" *ngFor="let image of imageGallery; let i = index" @fadeInUp>
-        <img [src]="image" [alt]="'Gallery image ' + (i + 1)" loading="lazy">
+      <div class="gallery-item" *ngFor="let item of imageGallery; let i = index" @fadeInUp>
+        <img [src]="item.image" [alt]="item.label" loading="lazy">
         <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="gallery-step">{{ item.label }}</span>
+            <p class="gallery-desc">{{ item.desc }}</p>
+          </div>
           <span class="gallery-icon">+</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Video Showcase -->
-<section class="video-showcase">
-  <div class="video-showcase-content">
-    <video autoplay muted loop playsinline class="showcase-video">
-      <source src="https://cdn.coverr.co/videos/coverr-modern-building-architecture-4473/1080p.mp4" type="video/mp4">
-    </video>
-    <div class="video-showcase-overlay">
-      <div class="container">
-        <h2 class="video-showcase-title" @fadeInUp>Bringing Visions to Life</h2>
-        <p class="video-showcase-text" @fadeInUp>Every project is a journey from concept to reality</p>
-        <button class="btn btn-secondary" routerLink="/contact" style="margin-top: 30px;">
-          Start Your Project
-          <span class="btn-icon">→</span>
-        </button>
       </div>
     </div>
   </div>

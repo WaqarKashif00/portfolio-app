@@ -61,19 +61,6 @@ export class ServicesComponent {
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop'
     },
     {
-      icon: '🏭',
-      title: 'Industrial Design',
-      description: 'Delivering adequate space for work with projects designed around the environment of the people functioning within them.',
-      features: [
-        'Manufacturing Facilities',
-        'Warehouse & Distribution Centers',
-        'Industrial Parks',
-        'Research & Development Centers',
-        'Production Facilities'
-      ],
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112d38e149?w=800&h=600&fit=crop'
-    },
-    {
       icon: '📐',
       title: 'Custom Revit Content',
       description: 'Crafted Revit families designed with simplicity in mind, ensuring ease of use for all experience levels.',

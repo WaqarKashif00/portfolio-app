@@ -12,6 +12,7 @@ interface Project {
   description: string;
   image: string;
   videoUrl?: string;
+  gallery?: (string | { image: string; label: string })[];
   details: {
     size?: string;
     budget?: string;
@@ -41,180 +42,95 @@ interface Project {
   ]
 })
 export class PortfolioComponent {
-  selectedCategory = 'All';
+  selectedGalleryImage: string | null = null;
   activeProject: Project | null = null;
-  
-  categories = ['All', 'Commercial', 'Residential', 'Industrial', 'Hospitality', 'Mixed-Use'];
+  selectedCategory = 'All';
+
+  categories = ['All', 'Planning', 'Construction', 'Completed'];
 
   projects: Project[] = [
     {
       id: 1,
-      title: 'Texas Pride Plaza',
-      category: 'Commercial',
+      title: 'Architectural Site Planning',
+      category: 'Planning',
       location: 'Midland, TX',
-      year: '2023',
-      description: 'A vibrant commercial hub featuring diverse retail, dining, and business spaces with an open and fluid layout that encourages community engagement.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
-      videoUrl: 'https://cdn.coverr.co/videos/coverr-aerial-view-of-a-modern-city-9837/1080p.mp4',
+      year: '2025',
+      description: 'The journey began with comprehensive site analysis and structural engineering. Our team developed detailed architectural plans to ensure optimal land use and structural integrity for this 12,000 SF commercial facility.',
+      image: 'assets/images/portfolio/journey/1-plans-cover.jpg',
+      gallery: [
+        { image: 'assets/images/portfolio/journey/0-location-map.jpg', label: 'Site Location Map' },
+        { image: 'assets/images/portfolio/journey/1-plans-cover.jpg', label: 'Architectural Cover Sheet' },
+        { image: 'assets/images/portfolio/journey/1-floor-plan.jpg', label: 'Detailed Floor Plan' },
+        { image: 'assets/images/portfolio/journey/1-utilities-plan.jpg', label: 'Electrical & Utilities Layout' },
+        { image: 'assets/images/portfolio/journey/2-site-plan.jpg', label: 'Detailed Site Plan' }
+      ],
       details: {
-        size: '45,000 sq ft',
-        budget: '$8.5M',
-        duration: '18 months'
+        size: '12,000 sq ft',
+        duration: '3 months (Design Phase)'
       }
     },
     {
       id: 2,
-      title: 'Skyline Executive Tower',
-      category: 'Commercial',
-      location: 'Dallas, TX',
-      year: '2023',
-      description: 'Modern office tower featuring sustainable design elements, state-of-the-art amenities, and breathtaking views.',
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop',
+      title: 'Foundation & Earthmoving',
+      category: 'Construction',
+      location: 'Midland, TX',
+      year: '2025',
+      description: 'The physical journey started with precision earthmoving and foundation laying. This phase focused on establishing a solid, high-grade concrete base for the high-capacity commercial structure.',
+      image: 'assets/images/portfolio/journey/3-foundation.jpg',
+      gallery: [
+        { image: 'assets/images/portfolio/journey/3-foundation.jpg', label: 'Primary Foundation Slab' },
+        { image: 'assets/images/portfolio/journey/3-foundation-2.jpg', label: 'Site Preparation & Grading' },
+        { image: 'assets/images/portfolio/journey/2-elevations.jpg', label: 'Structural Elevations' }
+      ],
       details: {
-        size: '120,000 sq ft',
-        budget: '$25M',
-        duration: '24 months'
+        size: 'Concrete Slab',
+        duration: '2 months'
       }
     },
     {
       id: 3,
-      title: 'Modern Family Residence',
-      category: 'Residential',
-      location: 'Austin, TX',
-      year: '2024',
-      description: 'Contemporary 4-bedroom, 3.5-bath home with luxury finishes, open concept living, and seamless indoor-outdoor flow.',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
+      title: 'Commercial Construction Progress',
+      category: 'Construction',
+      location: 'Midland, TX',
+      year: '2025',
+      description: 'Progress was meticulously documented through drone surveys, tracking the elevation and exterior finish of the building. This phase bridged the gap between raw structure and a finished commercial asset.',
+      image: 'assets/images/portfolio/journey/4-progress.jpg',
+      gallery: [
+        { image: 'assets/images/portfolio/journey/4-progress.jpg', label: 'Exterior Shell Construction' },
+        { image: 'assets/images/portfolio/journey/4-progress-2.jpg', label: 'Structural Frame Detail' },
+        { image: 'assets/images/portfolio/journey/5-completion-6.jpg', label: 'Progress Aerial Shot 01' },
+        { image: 'assets/images/portfolio/journey/5-completion-5.jpg', label: 'Progress Aerial Shot 02' }
+      ],
       details: {
-        size: '4,059 sq ft',
-        budget: '$1.2M',
-        duration: '12 months'
+        size: '12,000 sq ft',
+        duration: 'Active Construction'
       }
     },
     {
       id: 4,
-      title: 'Lakeside Estate',
-      category: 'Residential',
-      location: 'Lake Travis, TX',
-      year: '2023',
-      description: 'Stunning lakefront property featuring floor-to-ceiling windows, infinity pool, and contemporary architecture.',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+      title: 'Completed Portfolio Result',
+      category: 'Completed',
+      location: 'Midland, TX',
+      year: '2025',
+      description: 'The final destination: a state-of-the-art professional facility. This modern workspace demonstrates our commitment to high-end commercial quality from the first blueprint to the final exterior finish.',
+      image: 'assets/images/portfolio/journey/5-completion.jpg',
+      gallery: [
+        { image: 'assets/images/portfolio/journey/5-completion.jpg', label: 'Final Result - Front Aerial' },
+        { image: 'assets/images/portfolio/journey/5-completion-2.jpg', label: 'Final Result - Profile View' },
+        { image: 'assets/images/portfolio/journey/5-completion-3.jpg', label: 'Final Result - Rear elevation' },
+        { image: 'assets/images/portfolio/journey/5-completion-4.jpg', label: 'Final Result - High Angle' },
+        { image: 'assets/images/portfolio/journey/5-completion-7.jpg', label: 'Exterior Detail - West Side' },
+        { image: 'assets/images/portfolio/journey/5-completion-8.jpg', label: 'Exterior Detail - East Side' },
+        { image: 'assets/images/portfolio/journey/5-completion-9.jpg', label: 'Parking & Access View' },
+        { image: 'assets/images/portfolio/journey/5-completion-10.jpg', label: 'Landscaping & Facade' },
+        { image: 'assets/images/portfolio/journey/5-completion-11.jpg', label: 'Main Entrance Close-up' },
+        { image: 'assets/images/portfolio/journey/5-completion-12.jpg', label: 'Overall Site Integration' },
+        { image: 'assets/images/portfolio/journey/0-location-map.jpg', label: 'Project Location Reference' }
+      ],
       details: {
-        size: '5,200 sq ft',
-        budget: '$2.5M',
-        duration: '16 months'
-      }
-    },
-    {
-      id: 5,
-      title: 'Mountain View Villa',
-      category: 'Residential',
-      location: 'Hill Country, TX',
-      year: '2024',
-      description: 'Elegant estate nestled in the hills with panoramic views, premium materials, and sophisticated design.',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop',
-      details: {
-        size: '3,800 sq ft',
-        budget: '$1.8M',
-        duration: '14 months'
-      }
-    },
-    {
-      id: 6,
-      title: 'Executive Home',
-      category: 'Residential',
-      location: 'Houston, TX',
-      year: '2022',
-      description: 'Modern architecture with timeless elegance, featuring 4 bedrooms, 3.5 baths, and smart home integration.',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-      details: {
-        size: '3,348 sq ft',
-        budget: '$950K',
-        duration: '10 months'
-      }
-    },
-    {
-      id: 7,
-      title: 'TechManufacturing Facility',
-      category: 'Industrial',
-      location: 'San Antonio, TX',
-      year: '2023',
-      description: 'State-of-the-art manufacturing facility designed for optimal workflow, employee comfort, and operational efficiency.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112d38e149?w=800&h=600&fit=crop',
-      videoUrl: 'https://cdn.coverr.co/videos/coverr-modern-office-building-2344/1080p.mp4',
-      details: {
-        size: '85,000 sq ft',
-        budget: '$12M',
-        duration: '20 months'
-      }
-    },
-    {
-      id: 8,
-      title: 'Distribution Center',
-      category: 'Industrial',
-      location: 'Fort Worth, TX',
-      year: '2023',
-      description: 'Large-scale distribution facility with advanced logistics capabilities and sustainable design features.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
-      details: {
-        size: '150,000 sq ft',
-        budget: '$18M',
-        duration: '22 months'
-      }
-    },
-    {
-      id: 9,
-      title: 'Grand Hotel & Spa',
-      category: 'Hospitality',
-      location: 'Austin, TX',
-      year: '2024',
-      description: 'Luxury boutique hotel featuring 120 rooms, spa facilities, and fine dining experiences.',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-      details: {
-        size: '95,000 sq ft',
-        budget: '$35M',
-        duration: '30 months'
-      }
-    },
-    {
-      id: 10,
-      title: 'Urban Living Complex',
-      category: 'Mixed-Use',
-      location: 'Dallas, TX',
-      year: '2023',
-      description: 'Mixed-use development combining residential units, retail spaces, and office areas in urban setting.',
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop',
-      details: {
-        size: '200,000 sq ft',
-        budget: '$42M',
-        duration: '36 months'
-      }
-    },
-    {
-      id: 11,
-      title: 'Riverside Restaurant',
-      category: 'Hospitality',
-      location: 'San Antonio, TX',
-      year: '2024',
-      description: 'Upscale dining establishment with waterfront views and contemporary interior design.',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
-      details: {
-        size: '8,500 sq ft',
-        budget: '$2.2M',
-        duration: '8 months'
-      }
-    },
-    {
-      id: 12,
-      title: 'Innovation Campus',
-      category: 'Mixed-Use',
-      location: 'Austin, TX',
-      year: '2024',
-      description: 'Tech campus featuring collaborative workspaces, residential towers, and retail amenities.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
-      details: {
-        size: '300,000 sq ft',
-        budget: '$55M',
-        duration: '42 months'
+        size: '12,000 sq ft',
+        budget: '$3.5M',
+        duration: 'Project Completed'
       }
     }
   ];
@@ -237,6 +153,25 @@ export class PortfolioComponent {
 
   closeProject() {
     this.activeProject = null;
-    document.body.style.overflow = 'auto';
+    if (!this.selectedGalleryImage) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  openLightbox(image: string, event?: Event) {
+    if (event) event.stopPropagation();
+    this.selectedGalleryImage = image;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeLightbox() {
+    this.selectedGalleryImage = null;
+    if (!this.activeProject) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  isString(item: any): boolean {
+    return typeof item === 'string';
   }
 }

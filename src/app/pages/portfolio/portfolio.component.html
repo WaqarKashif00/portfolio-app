@@ -1,9 +1,7 @@
 <!-- Page Header -->
 <section class="page-header">
-  <div class="page-header-video">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-city-architecture-3692/1080p.mp4" type="video/mp4">
-    </video>
+  <div class="page-header-image">
+    <img src="assets/images/portfolio/journey/5-completion.jpg" alt="Completed Project">
     <div class="page-header-overlay"></div>
   </div>
   <div class="page-header-content" @fadeInUp>
@@ -17,10 +15,7 @@
 <section class="portfolio-filter">
   <div class="container">
     <div class="filter-buttons" @fadeInUp>
-      <button 
-        *ngFor="let category of categories"
-        class="filter-btn"
-        [class.active]="selectedCategory === category"
+      <button *ngFor="let category of categories" class="filter-btn" [class.active]="selectedCategory === category"
         (click)="selectCategory(category)">
         {{ category }}
       </button>
@@ -32,10 +27,7 @@
 <section class="portfolio-grid-section">
   <div class="container">
     <div class="portfolio-grid">
-      <div class="portfolio-item" 
-           *ngFor="let project of filteredProjects" 
-           (click)="openProject(project)"
-           @fadeInUp>
+      <div class="portfolio-item" *ngFor="let project of filteredProjects" (click)="openProject(project)" @fadeInUp>
         <div class="portfolio-image">
           <img [src]="project.image" [alt]="project.title">
           <div class="portfolio-overlay">
@@ -88,7 +80,8 @@
     <div class="testimonials-grid">
       <div class="testimonial-card" @fadeInUp>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"Cornerstone transformed our vision into reality with exceptional attention to detail and professionalism. The result exceeded all expectations."</p>
+        <p class="testimonial-text">"Cornerstone transformed our vision into reality with exceptional attention to
+          detail and professionalism. The result exceeded all expectations."</p>
         <div class="testimonial-author">
           <div class="author-image">
             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Author">
@@ -101,7 +94,8 @@
       </div>
       <div class="testimonial-card" @fadeInUp>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"Working with their team was a pleasure from start to finish. They delivered on time, on budget, and with outstanding quality."</p>
+        <p class="testimonial-text">"Working with their team was a pleasure from start to finish. They delivered on
+          time, on budget, and with outstanding quality."</p>
         <div class="testimonial-author">
           <div class="author-image">
             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" alt="Author">
@@ -114,7 +108,8 @@
       </div>
       <div class="testimonial-card" @fadeInUp>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"Their innovative approach and commitment to sustainability made them the perfect partner for our project. Highly recommended!"</p>
+        <p class="testimonial-text">"Their innovative approach and commitment to sustainability made them the perfect
+          partner for our project. Highly recommended!"</p>
         <div class="testimonial-author">
           <div class="author-image">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Author">
@@ -147,14 +142,14 @@
 <div class="modal" *ngIf="activeProject" (click)="closeProject()">
   <div class="modal-content" (click)="$event.stopPropagation()" @scaleIn>
     <button class="modal-close" (click)="closeProject()">×</button>
-    
+
     <div class="modal-media">
       <video *ngIf="activeProject.videoUrl" controls autoplay class="modal-video">
         <source [src]="activeProject.videoUrl" type="video/mp4">
       </video>
       <img *ngIf="!activeProject.videoUrl" [src]="activeProject.image" [alt]="activeProject.title" class="modal-image">
     </div>
-    
+
     <div class="modal-details">
       <div class="modal-header">
         <span class="modal-category">{{ activeProject.category }}</span>
@@ -164,9 +159,9 @@
           <span class="meta-item">📅 {{ activeProject.year }}</span>
         </div>
       </div>
-      
+
       <p class="modal-description">{{ activeProject.description }}</p>
-      
+
       <div class="modal-specs">
         <div class="spec-item" *ngIf="activeProject.details.size">
           <span class="spec-label">Size</span>
@@ -181,6 +176,32 @@
           <span class="spec-value">{{ activeProject.details.duration }}</span>
         </div>
       </div>
+
+      <div class="modal-gallery-section" *ngIf="activeProject.gallery?.length">
+        <h3 class="gallery-title">Project Gallery, Plans & Maps</h3>
+        <div class="modal-gallery">
+          <div class="gallery-item" *ngFor="let item of activeProject.gallery"
+            (click)="$any(item).image ? openLightbox($any(item).image) : openLightbox($any(item))">
+            <ng-container *ngIf="item && isString(item)">
+              <img [src]="item" [alt]="activeProject.title + ' detail'">
+            </ng-container>
+            <ng-container *ngIf="item && !isString(item)">
+              <div class="gallery-image-wrapper">
+                <img [src]="$any(item).image" [alt]="$any(item).label">
+                <div class="gallery-image-caption">{{ $any(item).label }}</div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" *ngIf="selectedGalleryImage" (click)="closeLightbox()" @scaleIn>
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <button class="lightbox-close" (click)="closeLightbox()">×</button>
+    <img [src]="selectedGalleryImage" alt="Enlarged view" class="lightbox-image">
   </div>
 </div>

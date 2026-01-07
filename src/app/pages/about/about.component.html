@@ -1,15 +1,13 @@
 <!-- Page Header -->
 <section class="page-header">
-  <div class="page-header-video">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-architectural-blueprint-3892/1080p.mp4" type="video/mp4">
-    </video>
+  <div class="page-header-image">
+    <img src="assets/images/portfolio/financial-facility/main.jpg" alt="Project Planning">
     <div class="page-header-overlay"></div>
   </div>
   <div class="page-header-content" @fadeInUp>
     <span class="page-label">About Us</span>
-    <h1 class="page-title">Building Dreams Since 2009</h1>
-    <p class="page-subtitle">Crafting architectural excellence with passion and precision</p>
+    <h1 class="page-title">Clear Drawings. Realistic Solutions.</h1>
+    <p class="page-subtitle">From concept to construction-ready, we design with the end build in mind.</p>
   </div>
 </section>
 
@@ -18,13 +16,27 @@
   <div class="container">
     <div class="story-content">
       <div class="story-text" @fadeInUp>
-        <span class="section-label">Our Story</span>
-        <h2 class="section-title">Architectural Excellence Through Innovation</h2>
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Commercial Architectural Design & Construction-Ready Drawings</h2>
         <div class="section-divider"></div>
-        <p class="lead">Founded in 2009, Cornerstone Design Group has grown from a small team of passionate architects into one of the region's most respected architectural firms.</p>
-        <p>Our journey began with a simple vision: to create spaces that inspire, function beautifully, and stand the test of time. Over the years, we've had the privilege of working on hundreds of projects, each one unique and each one a testament to our commitment to excellence.</p>
-        <p>We believe that great architecture is more than just buildings—it's about creating environments that enhance people's lives, strengthen communities, and contribute positively to the world around us.</p>
-        <p>Today, our team of talented architects, designers, and project managers continues to push the boundaries of what's possible, combining timeless design principles with cutting-edge technology to deliver exceptional results for our clients.</p>
+        <p class="lead">We are a local design firm specializing in commercial architectural design and
+          construction-ready drawings for business owners and general contractors. From early concepts to
+          permit-approved plans, our focus is simple: clear drawings, realistic solutions, and a smooth path to
+          construction.</p>
+        <p>With nearly a decade of industry experience and a strong foundation in construction, we understand how
+          buildings are actually built—not just how they look on paper. That perspective allows us to create designs
+          that are code-compliant, cost-aware, and efficient to build, helping our clients avoid delays, rework, and
+          unnecessary surprises.</p>
+        <p>We primarily serve commercial projects, including offices, warehouses, and other business facilities, with
+          project values ranging from several hundred thousand dollars to multi-million-dollar developments. Our team
+          routinely collaborates with engineers and city-accepted third-party inspectors to ensure drawings meet local
+          requirements and move confidently through the review process.</p>
+        <p>As a Midland-based firm, we bring valuable local knowledge to every project. We have worked closely with the
+          City of Midland for many years and maintain a strong working relationship with the permit review team—an
+          advantage that helps projects progress efficiently and approvals move faster.</p>
+        <p>Our typical delivery timeline is approximately six weeks, providing contractors and owners with dependable
+          schedules they can plan around. Whether you’re refining an idea or preparing to break ground, we approach
+          every project with responsiveness, clarity, and professionalism.</p>
       </div>
       <div class="story-images" @fadeInUp>
         <div class="story-image-main">
@@ -65,10 +77,8 @@
       <div class="section-divider"></div>
     </div>
     <div class="timeline">
-      <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" 
-           [class.timeline-left]="i % 2 === 0" 
-           [class.timeline-right]="i % 2 !== 0"
-           @fadeInUp>
+      <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" [class.timeline-left]="i % 2 === 0"
+        [class.timeline-right]="i % 2 !== 0" @fadeInUp>
         <div class="timeline-content">
           <div class="timeline-year">{{ milestone.year }}</div>
           <h3 class="timeline-event">{{ milestone.event }}</h3>
@@ -87,7 +97,8 @@
       <span class="section-label">Our Team</span>
       <h2 class="section-title">Meet The Experts</h2>
       <div class="section-divider"></div>
-      <p class="section-description">Our diverse team of architects and designers brings together decades of combined experience</p>
+      <p class="section-description">Our diverse team of architects and designers brings together decades of combined
+        experience</p>
     </div>
     <div class="team-grid">
       <div class="team-member" *ngFor="let member of teamMembers" @fadeInUp>
@@ -106,20 +117,7 @@
   </div>
 </section>
 
-<!-- Video Section -->
-<section class="about-video">
-  <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-team-meeting-in-office-3521/1080p.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay">
-      <div class="container">
-        <h2 class="video-title" @fadeInUp>We're More Than Just Architects</h2>
-        <p class="video-text" @fadeInUp>We're partners in bringing your vision to life</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- CTA Section -->
 <section class="cta-section">

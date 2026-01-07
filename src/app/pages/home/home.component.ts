@@ -38,11 +38,6 @@ export class HomeComponent implements OnInit {
       subtitle: 'Designing homes that reflect your lifestyle'
     },
     {
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112d38e149?w=1920&h=1080&fit=crop&q=90',
-      title: 'Industrial Innovation',
-      subtitle: 'Functional spaces for modern business'
-    },
-    {
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=1080&fit=crop&q=90',
       title: 'Modern Architecture',
       subtitle: 'Blending form with function beautifully'
@@ -53,50 +48,50 @@ export class HomeComponent implements OnInit {
 
   featuredProjects = [
     {
-      title: 'Texas Pride Plaza',
-      category: 'Commercial',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80',
-      description: 'Vibrant commercial hub with retail, dining and business spaces'
+      title: 'Architectural Planning',
+      category: 'Design Phase',
+      image: 'assets/images/portfolio/journey/1-plans-cover.jpg',
+      description: 'Comprehensive structural and site planning for the 12,000 SF project.'
     },
     {
-      title: 'Modern Residence',
-      category: 'Residential',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&q=80',
-      description: '4,059 sq ft luxury home with contemporary design'
+      title: 'Structural Elevation',
+      category: 'Engineering',
+      image: 'assets/images/portfolio/journey/2-elevations.jpg',
+      description: 'Precision drafting of building exteriors and vertical structural components.'
     },
     {
-      title: 'Industrial Complex',
-      category: 'Industrial',
-      image: 'https://cdn.pixabay.com/photo/2022/03/04/02/26/factory-7046354_960_720.jpg',
-      description: 'State-of-the-art manufacturing facility'
+      title: 'Foundation Slab',
+      category: 'Construction',
+      image: 'assets/images/portfolio/journey/3-foundation.jpg',
+      description: 'High-grade concrete foundation pour for the commercial structure.'
     },
     {
-      title: 'Luxury Estate',
-      category: 'Residential',
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop&q=80',
-      description: '5,200 sq ft lakefront property with stunning views'
+      title: 'Building Progress',
+      category: 'Site Surveillance',
+      image: 'assets/images/portfolio/journey/4-progress.jpg',
+      description: 'Documenting vertical progress through advanced drone captures.'
     },
     {
-      title: 'Office Tower',
-      category: 'Commercial',
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&q=80',
-      description: '120,000 sq ft sustainable office building'
+      title: 'Commercial Result',
+      category: 'Completed',
+      image: 'assets/images/portfolio/journey/5-completion.jpg',
+      description: 'The final, state-of-the-art professional facility in Midland, TX.'
     },
     {
-      title: 'Mountain Villa',
-      category: 'Residential',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&q=80',
-      description: 'Elegant estate with panoramic mountain views'
+      title: 'Site Integration',
+      category: 'Completed',
+      image: 'assets/images/portfolio/journey/5-completion-12.jpg',
+      description: 'Final birds-eye view of the completed site and landscape.'
     }
   ];
 
   imageGallery = [
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=800&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=800&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=800&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=800&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=800&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=800&fit=crop&q=80'
+    { image: 'assets/images/portfolio/journey/1-floor-plan.jpg', label: '1. Technical Drafting', desc: 'Precise blueprints using Revit' },
+    { image: 'assets/images/portfolio/journey/1-utilities-plan.jpg', label: '2. Engineering', desc: 'Complex utility & electrical mapping' },
+    { image: 'assets/images/portfolio/journey/3-foundation-2.jpg', label: '3. Site Prep', desc: 'Foundation and earthmoving phase' },
+    { image: 'assets/images/portfolio/journey/5-completion-4.jpg', label: '4. Frame Construction', desc: 'Erecting the primary building structure' },
+    { image: 'assets/images/portfolio/journey/4-progress-2.jpg', label: '5. Exterior Shell', desc: 'Installing roof and wall panels' },
+    { image: 'assets/images/portfolio/journey/5-completion-11.jpg', label: '6. Final Completion', desc: 'Project delivered and certified' }
   ];
 
   ngOnInit() {

@@ -3,7 +3,7 @@
   <div class="container nav-container">
     <div class="logo" routerLink="/">
       <span class="logo-icon">◆</span>
-      <span class="logo-text">Static Site</span>
+      <span class="logo-text">Cornerstone</span>
     </div>
     <ul class="nav-menu">
       <li><a routerLink="/" [class.active]="isActive('')">Home</a></li>
@@ -19,34 +19,77 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-icon">◆</span>
-          <span class="logo-text">Static Site</span>
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="logo">
+            <span class="logo-icon">◆</span>
+            <span class="logo-text">Cornerstone</span>
+          </div>
+          <p class="brand-desc">Local architectural design firm specializing in commercial projects and
+            construction-ready drawings. Precise. Professional. Proven.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="LinkedIn">in</a>
+            <a href="#" class="social-link" title="Instagram">ig</a>
+            <a href="#" class="social-link" title="Facebook">fb</a>
+            <a href="#" class="social-link" title="Twitter">tw</a>
+          </div>
         </div>
-        <p>Architectural design excellence since 2009</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/services">Services</a></li>
-          <li><a routerLink="/portfolio">Portfolio</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="#" class="social-icon">in</a>
-          <a href="#" class="social-icon">ig</a>
-          <a href="#" class="social-icon">fb</a>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-list">
+            <li><a routerLink="/services">Commercial Design</a></li>
+            <li><a routerLink="/services">Residential Architecture</a></li>
+            <li><a routerLink="/services">Construction Drawings</a></li>
+            <li><a routerLink="/services">Revit Content</a></li>
+            <li><a routerLink="/services">BIM Modeling</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a routerLink="/about">Our Story</a></li>
+            <li><a routerLink="/portfolio">Project Gallery</a></li>
+            <li><a routerLink="/contact">Get a Quote</a></li>
+            <li><a routerLink="/services">Our Process</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📍</span>
+              <span class="contact-text">123 Architecture Lane, Midland, TX 79701</span>
+            </li>
+            <li>
+              <span class="contact-icon">📱</span>
+              <span class="contact-text">+1 (555) 123-4567</span>
+            </li>
+            <li>
+              <span class="contact-icon">📧</span>
+              <span class="contact-text">info&#64;cornerstonedesign.com</span>
+            </li>
+            <li>
+              <span class="contact-icon">🕐</span>
+              <span class="contact-text">Mon - Fri: 8:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2024 Static Site Design Group. All rights reserved.</p>
+      <div class="bottom-content">
+        <p class="copyright">&copy; 2024 Cornerstone Architectural Design Group. All rights reserved.</p>
+        <div class="bottom-links">
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
