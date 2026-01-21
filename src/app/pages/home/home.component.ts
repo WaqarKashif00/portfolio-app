@@ -28,19 +28,19 @@ export class HomeComponent implements OnInit {
 
   heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=90',
+      image: 'assets/images/portfolio/journey/5-completion.jpg',
       title: 'Commercial Excellence',
       subtitle: 'Creating spaces that inspire business success'
     },
     {
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&h=1080&fit=crop&q=90',
-      title: 'Residential Masterpieces',
-      subtitle: 'Designing homes that reflect your lifestyle'
+      image: 'assets/images/portfolio/journey/4-progress.jpg',
+      title: 'Civil Engineering Excellence',
+      subtitle: 'Infrastructure that supports communities'
     },
     {
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=1080&fit=crop&q=90',
-      title: 'Modern Architecture',
-      subtitle: 'Blending form with function beautifully'
+      title: 'Modern Structural Design',
+      subtitle: 'Blending precision with performance'
     }
   ];
 
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
 
   featuredProjects = [
     {
-      title: 'Architectural Planning',
+      title: 'Engineering Planning',
       category: 'Design Phase',
       image: 'assets/images/portfolio/journey/1-plans-cover.jpg',
       description: 'Comprehensive structural and site planning for the 12,000 SF project.'
@@ -86,8 +86,8 @@ export class HomeComponent implements OnInit {
   ];
 
   imageGallery = [
-    { image: 'assets/images/portfolio/journey/1-floor-plan.jpg', label: '1. Technical Drafting', desc: 'Precise blueprints using Revit' },
-    { image: 'assets/images/portfolio/journey/1-utilities-plan.jpg', label: '2. Engineering', desc: 'Complex utility & electrical mapping' },
+    { image: 'assets/images/portfolio/journey/1-floor-plan.jpg', label: '1. Drafting & Modeling', desc: 'Precise blueprints using Revit' },
+    { image: 'assets/images/portfolio/journey/1-utilities-plan.jpg', label: '2. MEP Systems', desc: 'Complex utility & electrical mapping' },
     { image: 'assets/images/portfolio/journey/3-foundation-2.jpg', label: '3. Site Prep', desc: 'Foundation and earthmoving phase' },
     { image: 'assets/images/portfolio/journey/5-completion-4.jpg', label: '4. Frame Construction', desc: 'Erecting the primary building structure' },
     { image: 'assets/images/portfolio/journey/4-progress-2.jpg', label: '5. Exterior Shell', desc: 'Installing roof and wall panels' },

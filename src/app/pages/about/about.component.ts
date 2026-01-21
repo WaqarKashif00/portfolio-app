@@ -29,15 +29,15 @@ export class AboutComponent {
   teamMembers: TeamMember[] = [
     {
       name: 'John Anderson',
-      position: 'Principal Architect',
+      position: 'Principal Engineer',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
-      bio: '20+ years of experience in commercial and residential architecture'
+      bio: '20+ years of experience in commercial and civil engineering'
     },
     {
       name: 'Sarah Mitchell',
       position: 'Lead Designer',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-      bio: 'Award-winning designer specializing in sustainable architecture'
+      bio: 'Award-winning designer specializing in sustainable engineering'
     },
     {
       name: 'Michael Chen',
@@ -47,7 +47,7 @@ export class AboutComponent {
     },
     {
       name: 'Emily Rodriguez',
-      position: 'Senior Architect',
+      position: 'Senior Engineer',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
       bio: 'Specializes in innovative industrial and commercial designs'
     }
@@ -64,23 +64,13 @@ export class AboutComponent {
       title: 'Collaboration',
       description: 'Working closely with clients to transform their vision into reality.'
     },
-    {
-      icon: '♻️',
-      title: 'Sustainability',
-      description: 'Committed to environmentally responsible design and construction practices.'
-    },
-    {
-      icon: '💡',
-      title: 'Innovation',
-      description: 'Embracing cutting-edge technology and design methodologies.'
-    }
   ];
 
   milestones = [
     { year: '2009', event: 'Company Founded', description: 'Cornerstone Design Group established in Midland, Texas' },
-    { year: '2012', event: 'First Major Award', description: 'Received Excellence in Architecture Award' },
+    { year: '2012', event: 'First Major Award', description: 'Received Excellence in Engineering Award' },
     { year: '2015', event: '100 Projects', description: 'Completed our 100th successful project' },
-    { year: '2018', event: 'National Recognition', description: 'Featured in Architectural Digest' },
+    { year: '2018', event: 'National Recognition', description: 'Featured in Engineering News-Record' },
     { year: '2020', event: 'Sustainability Focus', description: 'Launched green building initiative' },
     { year: '2024', event: '500+ Projects', description: 'Milestone of over 500 completed projects' }
   ];

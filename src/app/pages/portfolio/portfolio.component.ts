@@ -51,15 +51,15 @@ export class PortfolioComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Architectural Site Planning',
+      title: 'Engineering Site Planning',
       category: 'Planning',
       location: 'Midland, TX',
       year: '2025',
-      description: 'The journey began with comprehensive site analysis and structural engineering. Our team developed detailed architectural plans to ensure optimal land use and structural integrity for this 12,000 SF commercial facility.',
+      description: 'The journey began with comprehensive site analysis and structural engineering. Our team developed detailed engineering plans to ensure optimal land use and structural integrity for this 12,000 SF commercial facility.',
       image: 'assets/images/portfolio/journey/1-plans-cover.jpg',
       gallery: [
         { image: 'assets/images/portfolio/journey/0-location-map.jpg', label: 'Site Location Map' },
-        { image: 'assets/images/portfolio/journey/1-plans-cover.jpg', label: 'Architectural Cover Sheet' },
+        { image: 'assets/images/portfolio/journey/1-plans-cover.jpg', label: 'Engineering Cover Sheet' },
         { image: 'assets/images/portfolio/journey/1-floor-plan.jpg', label: 'Detailed Floor Plan' },
         { image: 'assets/images/portfolio/journey/1-utilities-plan.jpg', label: 'Electrical & Utilities Layout' },
         { image: 'assets/images/portfolio/journey/2-site-plan.jpg', label: 'Detailed Site Plan' }

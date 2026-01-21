@@ -2,18 +2,23 @@
 <nav class="navbar" [class.scrolled]="scrolled">
   <div class="container nav-container">
     <div class="logo" routerLink="/">
-      <span class="logo-icon">◆</span>
-      <span class="logo-text">Cornerstone</span>
+      <img src="assets/images/Logo wide.png" alt="Vantage Logo" class="logo-img">
     </div>
-    <ul class="nav-menu">
-      <li><a routerLink="/" [class.active]="isActive('')">Home</a></li>
-      <li><a routerLink="/about" [class.active]="isActive('about')">About</a></li>
-      <li><a routerLink="/services" [class.active]="isActive('services')">Services</a></li>
-      <li><a routerLink="/portfolio" [class.active]="isActive('portfolio')">Portfolio</a></li>
-      <li><a routerLink="/contact" [class.active]="isActive('contact')">Contact</a></li>
+    <div class="mobile-menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu" [class.active]="menuOpen">
+      <li><a routerLink="/" (click)="closeMenu()" [class.active]="isActive('')">Home</a></li>
+      <li><a routerLink="/about" (click)="closeMenu()" [class.active]="isActive('about')">About</a></li>
+      <li><a routerLink="/services" (click)="closeMenu()" [class.active]="isActive('services')">Services</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()" [class.active]="isActive('contact')">Contact</a></li>
     </ul>
   </div>
 </nav>
+
+<div class="mobile-overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>
 
 <router-outlet></router-outlet>
 <!-- Footer -->
@@ -23,10 +28,9 @@
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <div class="logo">
-            <span class="logo-icon">◆</span>
-            <span class="logo-text">Cornerstone</span>
+            <img src="assets/images/Logo wide.png" alt="Vantage Logo" class="logo-img">
           </div>
-          <p class="brand-desc">Local architectural design firm specializing in commercial projects and
+          <p class="brand-desc">Local engineering firm specializing in commercial projects and
             construction-ready drawings. Precise. Professional. Proven.</p>
           <div class="social-links">
             <a href="#" class="social-link" title="LinkedIn">in</a>
@@ -39,11 +43,9 @@
         <div class="footer-col">
           <h4 class="footer-heading">Services</h4>
           <ul class="footer-list">
-            <li><a routerLink="/services">Commercial Design</a></li>
-            <li><a routerLink="/services">Residential Architecture</a></li>
+            <li><a routerLink="/services">Structural Engineering</a></li>
+            <li><a routerLink="/services">Civil Engineering</a></li>
             <li><a routerLink="/services">Construction Drawings</a></li>
-            <li><a routerLink="/services">Revit Content</a></li>
-            <li><a routerLink="/services">BIM Modeling</a></li>
           </ul>
         </div>
 
@@ -51,7 +53,7 @@
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-list">
             <li><a routerLink="/about">Our Story</a></li>
-            <li><a routerLink="/portfolio">Project Gallery</a></li>
+
             <li><a routerLink="/contact">Get a Quote</a></li>
             <li><a routerLink="/services">Our Process</a></li>
             <li><a href="#">Privacy Policy</a></li>
@@ -63,7 +65,7 @@
           <ul class="contact-list">
             <li>
               <span class="contact-icon">📍</span>
-              <span class="contact-text">123 Architecture Lane, Midland, TX 79701</span>
+              <span class="contact-text">123 Engineering Lane, Midland, TX 79701</span>
             </li>
             <li>
               <span class="contact-icon">📱</span>
@@ -71,7 +73,7 @@
             </li>
             <li>
               <span class="contact-icon">📧</span>
-              <span class="contact-text">info&#64;cornerstonedesign.com</span>
+              <span class="contact-text">info&#64;vantagedesign.com</span>
             </li>
             <li>
               <span class="contact-icon">🕐</span>
@@ -84,7 +86,7 @@
 
     <div class="footer-bottom">
       <div class="bottom-content">
-        <p class="copyright">&copy; 2024 Cornerstone Architectural Design Group. All rights reserved.</p>
+        <p class="copyright">&copy; 2024 Vantage Engineering Group. All rights reserved.</p>
         <div class="bottom-links">
           <a href="#">Terms of Use</a>
           <a href="#">Sitemap</a>

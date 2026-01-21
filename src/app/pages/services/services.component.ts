@@ -4,7 +4,6 @@ import { RouterLink } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 interface Service {
-  icon: string;
   title: string;
   description: string;
   features: string[];
@@ -35,69 +34,64 @@ interface Process {
 export class ServicesComponent {
   services: Service[] = [
     {
-      icon: '🏛️',
-      title: 'Commercial Architecture',
-      description: 'Creating functional, aesthetically pleasing, and sustainable solutions for commercial projects that enhance and contribute positively to the community.',
+      title: 'Structural Engineering',
+      description: 'Delivering safe, efficient, and innovative structural solutions for buildings and infrastructure projects.',
       features: [
-        'Office Buildings & Corporate Headquarters',
-        'Retail Spaces & Shopping Centers',
-        'Hotels & Hospitality Venues',
-        'Mixed-Use Developments',
-        'Restaurants & Entertainment Venues'
+        'Structural Analysis & Design',
+        'Seismic Retrofitting',
+        'Steel & Concrete Structures',
+        'Foundation Systems',
+        'Structural Audits'
       ],
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop'
     },
     {
-      icon: '🏠',
-      title: 'Residential Design',
-      description: 'Creating homes that fulfill functional requirements while reflecting the personal style and lifestyle of the people living in them.',
+      title: 'Civil Engineering',
+      description: 'Providing comprehensive civil engineering services that shape the infrastructure of our communities.',
       features: [
-        'Custom Home Design',
-        'Luxury Estate Planning',
-        'Multi-Family Housing',
-        'Home Renovations & Additions',
-        'Interior Space Planning'
+        'Site Development',
+        'Stormwater Management',
+        'Grading & Drainage Plans',
+        'Utility Design',
+        'Roadway & Paving Design'
       ],
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop'
     },
     {
-      icon: '📐',
-      title: 'Custom Revit Content',
-      description: 'Crafted Revit families designed with simplicity in mind, ensuring ease of use for all experience levels.',
+      title: 'MEP Engineering',
+      description: 'Designing efficient Mechanical, Electrical, and Plumbing systems for optimal building performance.',
       features: [
-        'Custom Revit Families',
-        'BIM Content Development',
-        'Parametric Modeling',
-        'Technical Documentation',
-        '3D Visualization Services'
-      ],
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop'
-    },
-    {
-      icon: '🌿',
-      title: 'Sustainable Design',
-      description: 'Environmentally responsible and resource-efficient design throughout a building\'s life-cycle.',
-      features: [
-        'LEED Certification Consulting',
-        'Energy-Efficient Design',
-        'Green Building Materials',
-        'Renewable Energy Integration',
-        'Water Conservation Systems'
-      ],
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop'
-    },
-    {
-      icon: '🎨',
-      title: 'Interior Design',
-      description: 'Creating beautiful, functional interior spaces that enhance the quality of life and culture of the occupants.',
-      features: [
-        'Space Planning & Layout',
-        'Material & Finish Selection',
-        'Furniture & Fixture Design',
-        'Lighting Design',
-        'Color Consultation'
+        'HVAC System Design',
+        'Electrical Power Distribution',
+        'Plumbing & Fire Protection',
+        'Lighting Control Systems',
+        'Energy Modeling'
       ],
       image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop'
+    },
+    {
+      title: 'Industrial Engineering',
+      description: 'Designing optimized facilities and systems for industrial manufacturing and processing.',
+      features: [
+        'Plant Layout & Design',
+        'Process Workflow Optimization',
+        'Material Handling Systems',
+        'Industrial Safety Protocols',
+        'Facility Maintenance Planning'
+      ],
+      image: 'assets/images/portfolio/journey/4-progress.jpg'
+    },
+    {
+      title: 'Oil & Gas Engineering',
+      description: 'Specialized engineering solutions for upstream, midstream, and downstream operations in the energy sector.',
+      features: [
+        'Pipeline Infrastructure',
+        'Refinery Process Design',
+        'Storage Facility Engineering',
+        'Regulatory Compliance',
+        'Safety Management Systems'
+      ],
+      image: 'assets/images/portfolio/journey/3-foundation.jpg'
     }
   ];
 
