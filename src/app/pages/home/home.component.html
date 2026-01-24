@@ -1,20 +1,15 @@
 <!-- Hero Section with Slideshow -->
 <section class="hero">
-  <div class="hero-slideshow">
-    <div class="hero-slide" *ngFor="let slide of heroSlides; let i = index" [class.active]="i === currentSlide"
-      [style.background-image]="'url(' + slide.image + ')'">
-      <div class="hero-overlay"></div>
-    </div>
-  </div>
+  <div class="video-container">
+    <video #heroVideo autoplay [muted]="isMuted" loop playsinline class="hero-video">
+      <source src="assets/videos/flow.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
 
-  <!-- Slide Controls -->
-  <!-- <button class="slide-control prev" (click)="prevSlide()">‹</button>
-  <button class="slide-control next" (click)="nextSlide()">›</button> -->
-
-  <!-- Slide Indicators -->
-  <div class="slide-indicators">
-    <button *ngFor="let slide of heroSlides; let i = index" class="indicator" [class.active]="i === currentSlide"
-      (click)="goToSlide(i)">
+    <!-- Audio Control -->
+    <button class="audio-control" (click)="toggleMute()" [title]="isMuted ? 'Unmute' : 'Mute'">
+      <span class="audio-icon">{{ isMuted ? '🔇' : '🔊' }}</span>
     </button>
   </div>
 

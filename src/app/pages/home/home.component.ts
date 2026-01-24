@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -18,7 +18,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
+
   stats = [
     { number: 500, currentNumber: 0, label: 'Projects Completed', suffix: '+' },
     { number: 15, currentNumber: 0, label: 'Years Experience', suffix: '+' },
@@ -26,25 +28,7 @@ export class HomeComponent implements OnInit {
     { number: 50, currentNumber: 0, label: 'Awards Won', suffix: '+' }
   ];
 
-  heroSlides = [
-    {
-      image: 'assets/images/portfolio/journey/5-completion.jpg',
-      title: 'Commercial Excellence',
-      subtitle: 'Creating spaces that inspire business success'
-    },
-    {
-      image: 'assets/images/portfolio/journey/4-progress.jpg',
-      title: 'Civil Engineering Excellence',
-      subtitle: 'Infrastructure that supports communities'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=1080&fit=crop&q=90',
-      title: 'Modern Structural Design',
-      subtitle: 'Blending precision with performance'
-    }
-  ];
-
-  currentSlide = 0;
+  isMuted = true; // Start muted to ensure autoplay works, then try to unmute
 
   featuredProjects = [
     {
@@ -96,25 +80,47 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.animateStats();
-    this.startSlideshow();
   }
 
-  startSlideshow() {
-    setInterval(() => {
-      this.nextSlide();
-    }, 5000);
+  ngAfterViewInit() {
+    this.attemptAutoplay();
   }
 
-  nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.heroSlides.length;
+  async attemptAutoplay() {
+    if (this.heroVideo) {
+      const video = this.heroVideo.nativeElement;
+
+      // Try unmuted first (since user requested sound by default)
+      video.muted = false;
+      this.isMuted = false;
+
+      try {
+        await video.play();
+      } catch (err) {
+        console.log('Autoplay unmuted failed, trying muted.');
+        // Fallback to muted autoplay
+        video.muted = true;
+        this.isMuted = true;
+        try {
+          await video.play();
+        } catch (muteErr) {
+          console.error('Video playback failed completely:', muteErr);
+        }
+      }
+    }
   }
 
-  prevSlide() {
-    this.currentSlide = this.currentSlide === 0 ? this.heroSlides.length - 1 : this.currentSlide - 1;
-  }
+  toggleMute() {
+    if (this.heroVideo) {
+      const video = this.heroVideo.nativeElement;
+      this.isMuted = !this.isMuted;
+      video.muted = this.isMuted;
 
-  goToSlide(index: number) {
-    this.currentSlide = index;
+      // Some browsers require a fresh play call on user interaction
+      if (video.paused) {
+        video.play().catch(err => console.error('Play failed on toggle:', err));
+      }
+    }
   }
 
   animateStats() {
