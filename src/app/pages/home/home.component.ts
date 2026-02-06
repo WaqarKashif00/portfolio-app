@@ -20,6 +20,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('showcaseVideo') showcaseVideo!: ElementRef<HTMLVideoElement>;
 
   stats = [
     { number: 500, currentNumber: 0, label: 'Projects Completed', suffix: '+' },
@@ -28,7 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     { number: 50, currentNumber: 0, label: 'Awards Won', suffix: '+' }
   ];
 
-  isMuted = true; // Start muted to ensure autoplay works, then try to unmute
+  isMuted = true;
 
   featuredProjects = [
     {
@@ -84,28 +85,51 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.attemptAutoplay();
+    this.playShowcaseVideo();
   }
 
   async attemptAutoplay() {
     if (this.heroVideo) {
       const video = this.heroVideo.nativeElement;
-
-      // Try unmuted first (since user requested sound by default)
       video.muted = false;
       this.isMuted = false;
 
       try {
+        await new Promise<void>((resolve) => {
+          if (video.readyState >= 2) {
+            resolve();
+          } else {
+            video.addEventListener('loadedmetadata', () => resolve(), { once: true });
+          }
+        });
+
+        video.currentTime = 25;
         await video.play();
+
       } catch (err) {
         console.log('Autoplay unmuted failed, trying muted.');
-        // Fallback to muted autoplay
         video.muted = true;
         this.isMuted = true;
         try {
+          video.currentTime = 25;
           await video.play();
         } catch (muteErr) {
           console.error('Video playback failed completely:', muteErr);
         }
+      }
+    }
+  }
+
+  async playShowcaseVideo() {
+    if (this.showcaseVideo) {
+      const video = this.showcaseVideo.nativeElement;
+      video.muted = true; // Must be muted for autoplay
+
+      try {
+        await video.play();
+        console.log('Showcase video playing');
+      } catch (err) {
+        console.error('Showcase video playback failed:', err);
       }
     }
   }
@@ -116,7 +140,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.isMuted = !this.isMuted;
       video.muted = this.isMuted;
 
-      // Some browsers require a fresh play call on user interaction
       if (video.paused) {
         video.play().catch(err => console.error('Play failed on toggle:', err));
       }

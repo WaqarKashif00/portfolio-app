@@ -2,7 +2,7 @@
 <section class="hero">
   <div class="video-container">
 
-    <video #heroVideo autoplay [muted]="isMuted" loop playsinline class="hero-video">
+    <video #heroVideo autoplay [muted]="isMuted" loop playsinline preload="auto"  class="hero-video">
   <source src="https://res.cloudinary.com/dak8clwmd/video/upload/v1769864072/flow_i1sik2.mp4" type="video/mp4">
 </video>
     <div class="hero-overlay"></div>
@@ -62,6 +62,29 @@
       </div>
       <div class="welcome-image">
         <img src="assets/images/portfolio/journey/4-progress-2.jpg" alt="Engineering Structure">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="video-showcase">
+  <div class="container">
+    <div class="video-showcase-content">
+      <div class="video-showcase-text-content">
+        <span class="section-label">Our Journey</span>
+        <h2 class="video-showcase-title">From Blueprint to Reality</h2>
+        <div class="section-divider" style="margin-left: 0;"></div>
+        <p class="video-showcase-description">Watch how we transform initial concepts into fully-realized commercial structures. Our comprehensive process takes projects from detailed engineering drawings through foundation work, structural assembly, and final completion—delivering precision at every phase.</p>
+        <button class="btn btn-primary" routerLink="/portfolio">
+          View Full Portfolio
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+      <div class="video-showcase-video-wrapper">
+        <video #showcaseVideo class="showcase-video" muted loop playsinline preload="auto">
+          <source src="https://res.cloudinary.com/dak8clwmd/video/upload/v1769864072/flow_i1sik2.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
