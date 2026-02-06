@@ -35,13 +35,14 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 15px 0;
   transition: all 0.3s ease;
-  background: transparent;
+  background: white; /* Changed from transparent to white */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
 .navbar.scrolled {
-  // background: rgba(26, 26, 26, 0.95);
+  background: white; /* Changed to white */
   backdrop-filter: blur(10px);
   padding: 15px 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -77,7 +78,7 @@ body {
 }
 
 .nav-menu a {
-  color: var(--secondary);
+  color: var(--text);
   // color: black;
   text-decoration: none;
   font-size: 14px;
