@@ -103,7 +103,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
           }
         });
 
-        video.currentTime = 25;
         await video.play();
 
       } catch (err) {
@@ -111,7 +110,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         video.muted = true;
         this.isMuted = true;
         try {
-          video.currentTime = 25;
           await video.play();
         } catch (muteErr) {
           console.error('Video playback failed completely:', muteErr);
