@@ -381,6 +381,10 @@ section {
   background: var(--primary);
   color: white;
   padding: 60px 0 20px;
+
+  .logo{
+    background-color: white !important;
+  }
 }
 
 .footer-content {
