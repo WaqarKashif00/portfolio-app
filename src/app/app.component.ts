@@ -15,10 +15,6 @@ export class AppComponent {
 
   constructor(public router: Router) {}
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    this.scrolled = window.scrollY > 50;
-  }
 
   isActive(route: string): boolean {
     return this.router.url === route || this.router.url === '/' + route;
